@@ -73,3 +73,10 @@ Simple gradle multi module project.
 :server:check SKIPPED
 :server:build SKIPPED
 ```
+
+# Fix and Root Cause
+
+ClassLoader that loads Boot's Gradle plugin can't see the NBT plugin's types as they're only visible to the subproject's ClassLoader.
+
+See the change: https://github.com/ttddyy/issue-boot-gradle-aot-tasks/commit/ed85440a01bba5f74249f8f2bfefe8e72491b545
+
