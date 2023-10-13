@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:3.1.4")
+    }
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+allprojects {
+//subprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = JavaVersion.VERSION_17
+    repositories {
+        mavenCentral()
+    }
+}
