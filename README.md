@@ -2,7 +2,7 @@
 
 Simple gradle multi module project.
 
-- Using old style - `buildscript`, `[all|sub]projects`
+- Using old style - `buildscript`, `[all|sub]projects` to specify spring-boot plugin
 
 # Issue
 
@@ -14,11 +14,11 @@ Simple gradle multi module project.
 :server:compileJava SKIPPED
 :server:processResources SKIPPED
 :server:classes SKIPPED
-:server:resolveMainClassName SKIPPED
-:server:processAot SKIPPED
-:server:compileAotJava SKIPPED
-:server:processAotResources SKIPPED
-:server:aotClasses SKIPPED
+:server:resolveMainClassName SKIPPED    // expected
+:server:processAot SKIPPED              // expected
+:server:compileAotJava SKIPPED          // expected
+:server:processAotResources SKIPPED     // expected
+:server:aotClasses SKIPPED              // expected
 :server:jar SKIPPED
 :server:generateResourcesConfigFile SKIPPED
 :server:nativeCompile SKIPPED
@@ -36,3 +36,40 @@ Simple gradle multi module project.
 :server:nativeCompile SKIPPED
 ```
 
+`build` task
+
+```
+> ./gradlew -m build
+:compileJava SKIPPED
+:processResources SKIPPED
+:classes SKIPPED
+:jar SKIPPED
+:assemble SKIPPED
+:compileTestJava SKIPPED
+:processTestResources SKIPPED
+:testClasses SKIPPED
+:test SKIPPED
+:check SKIPPED
+:build SKIPPED
+:server:compileJava SKIPPED
+:server:processResources SKIPPED
+:server:classes SKIPPED
+:server:resolveMainClassName SKIPPED
+:server:processAot SKIPPED
+:server:compileAotJava SKIPPED
+:server:processAotResources SKIPPED
+:server:aotClasses SKIPPED
+:server:bootJar SKIPPED
+:server:jar SKIPPED
+:server:assemble SKIPPED
+:server:compileTestJava SKIPPED
+:server:processTestResources SKIPPED
+:server:testClasses SKIPPED
+:server:processTestAot SKIPPED
+:server:compileAotTestJava SKIPPED
+:server:processAotTestResources SKIPPED
+:server:aotTestClasses SKIPPED
+:server:test SKIPPED
+:server:check SKIPPED
+:server:build SKIPPED
+```
