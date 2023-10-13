@@ -6,7 +6,7 @@ plugins {
 	id 'org.springframework.boot.aot'
 //	id 'io.spring.dependency-management'
 //	id 'java'
-	id 'org.graalvm.buildtools.native' version '0.9.27'
+	id 'org.graalvm.buildtools.native'
 }
 
 repositories {
